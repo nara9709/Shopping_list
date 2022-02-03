@@ -117,23 +117,23 @@ footer {
   outline: none;
 }
 
-.fa-cart-plus {
+.add__btn {
   font-size: 35px;
   padding: 8px 0;
   color: white;
 }
 
-.fa-cart-plus:hover {
+.add__btn:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: all 100ms ease-in;
 }
 
-.fa-trash-alt {
+.delete__btn {
   font-size: 18px;
 }
 
-.fa-trash-alt:hover {
+.delete__btn:hover {
   cursor: pointer;
   transform: scale(1.1);
   color: #d63031;
