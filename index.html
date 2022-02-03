@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4eb0532937.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,500&family=Raleway:wght@100;200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/main.js"></script>
+    <title>Check your cart!</title>
+  </head>
+  <body>
+    <section class="listSection">
+      <header class="title">
+        Shopping list
+        <nav>
+          <input type="date" class="date-select" />
+          <select name="location" class="location-select">
+            <option value="">📍 choose a location</option>
+            <option value="Metro">📍 Metro</option>
+            <option value="Walmart">📍 Walmart</option>
+            <option value="Bestbuy">📍 Bestbuy</option>
+          </select>
+        </nav>
+      </header>
+      <div class="list">
+        <ul class="items">
+          <li class="item">
+            <div class="item__row">
+              <span class="itme__name">Egg</span>
+              <button><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="divider"></div>
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <input type="text" class="text__input" />
+        <button><i class="fas fa-cart-plus"></i></button>
+      </footer>
+    </section>
+  </body>
+</html>
