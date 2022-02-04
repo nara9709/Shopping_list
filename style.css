@@ -56,6 +56,10 @@ footer {
   flex-direction: column;
 }
 
+span {
+  display: inline;
+}
+
 .location-select {
   border: none;
   font-size: 15px;
@@ -94,10 +98,6 @@ footer {
   overflow-y: auto;
   list-style: none;
   padding: 0;
-}
-
-.items {
-  padding: 0;
   margin: auto;
 }
 
@@ -110,6 +110,11 @@ footer {
   display: flex;
   justify-content: space-between;
   margin: 5px 50px;
+}
+
+.check__box {
+  margin-right: 20px;
+  border: 1px solid lightgray;
 }
 
 .list {

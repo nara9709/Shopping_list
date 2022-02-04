@@ -26,8 +26,12 @@ function createListItem(name) {
   let createitemRow = document.createElement('div');
   createitemRow.setAttribute('class', 'item__row');
 
-  let createItemName = document.createElement('span');
+  let createItemName = document.createElement('div');
   createItemName.setAttribute('class', 'item__name');
+
+  let createCheckBox = document.createElement('input');
+  createCheckBox.setAttribute('type', 'checkbox');
+  createCheckBox.setAttribute('class', 'check__box');
 
   let createDelete = document.createElement('button');
   createDelete.setAttribute('class', 'delete__btn');
@@ -46,6 +50,7 @@ function createListItem(name) {
   createDelete.appendChild(createDelIcon);
 
   createItemName.innerHTML = name;
+  createItemName.appendChild(createCheckBox);
 
   createList.scrollIntoView({ black: 'center' });
 
