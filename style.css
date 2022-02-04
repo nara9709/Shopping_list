@@ -83,7 +83,14 @@ footer {
   cursor: pointer;
 }
 
-.text__input .items {
+.text__input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: solid 1px grey;
+}
+
+.items {
   overflow-y: auto;
   list-style: none;
   padding: 0;
@@ -107,6 +114,7 @@ footer {
 
 .list {
   height: 50vh;
+  overflow-y: auto;
 }
 
 .text__input {
@@ -143,6 +151,6 @@ footer {
 .divider {
   width: 80%;
   height: 1px;
-  background-color: gray;
+  background-color: lightgrey;
   margin: auto;
 }
