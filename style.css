@@ -4,7 +4,7 @@
 
 body {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background-color: #6c5ce7;
 }
 
@@ -43,6 +43,7 @@ button {
 }
 
 footer {
+  height: 13vh;
   background: rgb(252, 92, 125);
   background: linear-gradient(
     90deg,
@@ -87,13 +88,6 @@ span {
   cursor: pointer;
 }
 
-.text__input {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border: solid 1px grey;
-}
-
 .items {
   overflow-y: auto;
   list-style: none;
@@ -106,15 +100,45 @@ span {
   list-style: none;
 }
 
+.item__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item__location {
+  font-size: 13px;
+  padding-left: 40px;
+}
+.item__price {
+  margin-right: 12px;
+}
+
 .item__row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 5px 50px;
 }
 
-.check__box {
-  margin-right: 20px;
-  border: 1px solid lightgray;
+.item__row.clicked {
+  font-style: italic;
+  color: lightgray;
+  transform: lotate(5deg);
+}
+
+.complete__btn {
+  font-size: 25px;
+  color: palevioletred;
+  transition: all 100ms ease-in;
+}
+
+.complete__btn:hover {
+  cursor: pointer;
+  transform: rotate(10deg);
+}
+
+.complete__btn.clicked {
+  color: lightgrey;
 }
 
 .list {
@@ -122,17 +146,27 @@ span {
   overflow-y: auto;
 }
 
+.input__box {
+  display: flex;
+}
+
 .text__input {
-  width: 100%;
+  width: 70%;
   height: 30px;
   font-size: 20px;
-  font-weight: lighter;
-  outline: none;
+  border: none;
+}
+
+.number__input {
+  width: 30%;
+  font-size: 18px;
+  border: none;
+  border-left: solid 1px black;
 }
 
 .add__btn {
   font-size: 35px;
-  padding: 8px 0;
+  padding-top: 20px;
   color: white;
 }
 
@@ -151,6 +185,10 @@ span {
   transform: scale(1.1);
   color: #d63031;
   transition: all 100ms ease-in;
+}
+
+.delete__btn.clicked {
+  color: lightgrey;
 }
 
 .divider {
