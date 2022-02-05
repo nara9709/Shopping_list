@@ -1,6 +1,6 @@
 <h1>🛒 Shopping List</h1>
 
-## 📝 Description <br>
+## Description <br>
 Controll what you need to buy or what you buyed with this website!
 
 ## Built With 
@@ -14,5 +14,5 @@ Visual studio code
 2.Delete a list
 3.Check what you purchased
 
-##Use a Shopping list website
-###Link: https://nara9709.github.io/Shopping_list/
+## Use a Shopping list website
+### Link: https://nara9709.github.io/Shopping_list/
