@@ -13,6 +13,7 @@ Visual studio code
 1.Make a shopping list with price
 2.Delete a list
 3.Check what you purchased
+4.Check your total price 
 
 ## Use a Shopping list website
 ### Link: https://nara9709.github.io/Shopping_list/
