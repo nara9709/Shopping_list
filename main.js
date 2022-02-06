@@ -1,6 +1,6 @@
 'use strict';
 
-const addBtn = document.querySelector('.add__btn');
+const addButton = document.querySelector('.add__btn');
 const items = document.querySelector('.items');
 const deleteBtn = document.querySelector('.delete__btn');
 const textInput = document.querySelector('.text__input');
@@ -108,7 +108,7 @@ items.addEventListener('click', (event) => {
 });
 
 // Add list with add button
-addBtn.addEventListener('click', () => {
+addButton.addEventListener('click', () => {
   onAddBtn();
 });
 
