@@ -7,6 +7,12 @@ const textInput = document.querySelector('.text__input');
 const numberInput = document.querySelector('.number__input');
 const selectLocation = document.querySelector('.location-select');
 const total = document.querySelector('.total__price');
+const form = document.querySelector('.input-form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  onAddBtn();
+});
 
 let sumTotal = new Number(0);
 
@@ -104,18 +110,6 @@ items.addEventListener('click', (event) => {
     toBecompleBagBtn.classList.toggle('clicked');
     toBecompleDelBtn.classList.toggle('clicked');
     toBecompleItem.classList.toggle('clicked');
-  }
-});
-
-// Add list with add button
-addButton.addEventListener('click', () => {
-  onAddBtn();
-});
-
-//Add list with enter key
-document.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    onAddBtn();
   }
 });
 
