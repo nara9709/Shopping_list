@@ -1,14 +1,14 @@
 'use strict';
 
 const addBtn = document.querySelector('.add__btn');
-const listBox = document.querySelector('.list');
 const items = document.querySelector('.items');
 const deleteBtn = document.querySelector('.delete__btn');
 const textInput = document.querySelector('.text__input');
 const numberInput = document.querySelector('.number__input');
-const totalPrice = document.querySelector('.totalPrice__number');
 const selectLocation = document.querySelector('.location-select');
-const checkbox = document.querySelector('.check__box');
+const total = document.querySelector('.total__price');
+
+let sumTotal = new Number(0);
 
 function onAddBtn() {
   let name = textInput.value;
@@ -20,7 +20,16 @@ function onAddBtn() {
     textInput.focus();
     return;
   } else {
+    // priceArray.push(price);
+
+    // let sumTotal = priceArray.reduce((preValue, curValue) => {
+    //   return preValue + curValue;
+    // }, 0);
+
     createListItem(name, price, location);
+    // total.innerHTML = `$${sumTotal}`;
+    sumTotal += price;
+    updateSummary();
 
     numberInput.value = '';
     numberInput.focus();
@@ -29,83 +38,76 @@ function onAddBtn() {
   }
 }
 
+let id = 0;
+
 function createListItem(name, price, location) {
-  let createList = document.createElement('li');
+  const createList = document.createElement('li');
   createList.setAttribute('class', 'item');
+  createList.setAttribute('data-id', id);
 
-  let createItemRow = document.createElement('div');
-  createItemRow.setAttribute('class', 'item__row');
-
-  let createItemLeft = document.createElement('div');
-  createItemLeft.setAttribute('class', 'item__left');
-
-  let createCompleBtn = document.createElement('button');
-  createCompleBtn.setAttribute('class', 'complete__btn');
-
-  let createCompleIcon = document.createElement('i');
-  createCompleIcon.setAttribute('class', 'fas fa-shopping-bag');
-
-  let createItemName = document.createElement('span');
-  createItemName.setAttribute('class', 'item__name');
-
-  let createItemLoca = document.createElement('span');
-  createItemLoca.setAttribute('class', 'item__location');
-
-  let createItemRight = document.createElement('div');
-  createItemRight.setAttribute('class', 'item__right');
-
-  let createItemPrice = document.createElement('span');
-  createItemPrice.setAttribute('class', 'item__price');
-
-  let createDelete = document.createElement('button');
-  createDelete.setAttribute('class', 'delete__btn');
-
-  let createDelIcon = document.createElement('i');
-  createDelIcon.setAttribute('class', 'fas fa-trash-alt');
-
-  let createDivider = document.createElement('div');
-  createDivider.setAttribute('class', 'divider');
+  createList.innerHTML = `
+  <div class="item__row">
+    <div class="item__left">
+      <button class="complete__btn" data-target-id=${id}>
+        <i class="fas fa-shopping-bag" data-target-id=${id}></i>
+      </button>
+      <span class="itme__name">${name}</span>
+      <span class="item__location"> ${location}</span>
+    </div>
+    <div class="item__right">
+      <span class="item__price" >$${price}</span>
+      <button class="delete__btn" data-target-id=${id} data-price=${price}>
+       <i class="fas fa-trash-alt" data-target-id=${id} data-price=${price}></i>
+      </button>
+    </div>
+    </div>
+  <div class="divider"></div>
+  </div>`;
 
   items.appendChild(createList);
-  items.appendChild(createDivider);
-  createList.appendChild(createItemRow);
-  createCompleBtn.appendChild(createCompleIcon);
-  createItemLeft.appendChild(createCompleBtn);
-  createItemLeft.appendChild(createItemName);
-  createItemLeft.appendChild(createItemLoca);
-  createItemRow.appendChild(createItemLeft);
-  createItemRight.appendChild(createItemPrice);
-  createDelete.appendChild(createDelIcon);
-  createItemRight.appendChild(createDelete);
-  createItemRow.appendChild(createItemRight);
 
-  createItemName.innerHTML = name;
-  createItemPrice.innerHTML = `$${price}`;
+  createList.scrollIntoView({ block: 'center' });
 
-  // Controll complete button
-  createCompleBtn.addEventListener('click', () => {
-    createCompleBtn.classList.toggle('clicked');
-    createItemRow.classList.toggle('clicked');
-    createDelete.classList.toggle('clicked');
-  });
-
-  // Deleted list
-  createDelete.addEventListener('click', () => {
-    items.removeChild(createList);
-    items.removeChild(createDivider);
-  });
-
-  createList.scrollIntoView({ black: 'center' });
-
-  // Add location to the list
-  if (location === '') {
-    return;
-  }
-  {
-    createItemLoca.innerHTML = `${location}`;
-  }
+  id++;
+  return;
 }
 
+items.addEventListener('click', (event) => {
+  const id = event.target.dataset.targetId;
+
+  // Delete list
+  if (
+    event.target.className === 'delete__btn' ||
+    event.target.className === 'fas fa-trash-alt'
+  ) {
+    const toBeDeleted = document.querySelector(`.item[data-id="${id}"]`);
+    toBeDeleted.remove();
+
+    // Minus item price
+    const delPrice = Number(event.target.dataset.price);
+    sumTotal -= delPrice;
+    updateSummary();
+  }
+
+  //Complete button
+  if (
+    event.target.className === 'complete__btn' ||
+    event.target.className === 'fas fa-shopping-bag'
+  ) {
+    const toBecompleBagBtn = document.querySelector(
+      `.complete__btn[data-target-id="${id}"]`
+    );
+    const toBecompleDelBtn = document.querySelector(
+      `.delete__btn[data-target-id="${id}"]`
+    );
+    const toBecompleItem = document.querySelector(`.item[data-id="${id}"]`);
+    toBecompleBagBtn.classList.toggle('clicked');
+    toBecompleDelBtn.classList.toggle('clicked');
+    toBecompleItem.classList.toggle('clicked');
+  }
+});
+
+// Add list with add button
 addBtn.addEventListener('click', () => {
   onAddBtn();
 });
@@ -116,3 +118,8 @@ document.addEventListener('keypress', (event) => {
     onAddBtn();
   }
 });
+
+// Update total price
+function updateSummary() {
+  total.innerHTML = `$${Number(sumTotal)}`;
+}

@@ -43,6 +43,7 @@ button {
 }
 
 footer {
+  margin-top: 10px;
   height: 13vh;
   background: rgb(252, 92, 125);
   background: linear-gradient(
@@ -93,11 +94,18 @@ span {
   list-style: none;
   padding: 0;
   margin: auto;
+  margin-bottom: 10px;
 }
 
 .item {
   margin: auto;
   list-style: none;
+}
+
+.item.clicked {
+  font-style: italic;
+  color: lightgray;
+  transform: lotate(5deg);
 }
 
 .item__left {
@@ -118,12 +126,6 @@ span {
   justify-content: space-between;
   align-items: center;
   margin: 5px 50px;
-}
-
-.item__row.clicked {
-  font-style: italic;
-  color: lightgray;
-  transform: lotate(5deg);
 }
 
 .complete__btn {
@@ -151,6 +153,7 @@ span {
 }
 
 .text__input {
+  padding-left: 5px;
   width: 70%;
   height: 30px;
   font-size: 20px;
@@ -158,6 +161,7 @@ span {
 }
 
 .number__input {
+  padding-left: 5px;
   width: 30%;
   font-size: 18px;
   border: none;
