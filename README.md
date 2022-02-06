@@ -10,10 +10,10 @@ HTML, CSS, JavaScript <br>
 Visual studio code
 
 ### usage
-1.Make a shopping list with price
-2.Delete a list
-3.Check what you purchased
-4.Check your total price 
+1.Make a shopping list with price<br>
+2.Delete a list<br>
+3.Check what you purchased<br>
+4.Check your total price<br>
 
 ## Use a Shopping list website
 ### Link: https://nara9709.github.io/Shopping_list/
