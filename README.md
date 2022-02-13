@@ -15,7 +15,7 @@
 <br>
 
 
-# 💾Functions of this applicatio
+# 💾Functions of this application
 
 ### 💡Make a list including price and chosen location using user's input data 
 <br> 
