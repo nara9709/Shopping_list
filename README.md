@@ -44,7 +44,7 @@ when the trash icon is clicked store the id number of a dataset as a value and t
 
 ### 💡Calculate a total price
 <br>
-<img alt="calculate total price" target="blank" src="https://user-images.githubusercontent.com/70143350/153743445-0b169830-e5ea-403f-b1eb-e7350942e506.gif"/>
+<img alt="calculate total price" target="_blank" src="https://user-images.githubusercontent.com/70143350/153743445-0b169830-e5ea-403f-b1eb-e7350942e506.gif"/>
 <br>
 <blockquote>
 Plus a price of a newly created item and calculate the total price<br>
@@ -64,7 +64,7 @@ It can also subtract a deleted item from the total price <br>
 - How to create an element dynamically using user's input data and append them
 - How to call datasets and use them to match with click event</i>
 
-- If you wnat to read<a href="https://medium.com/@worldkr19/dfs-e75b7e20dd8a" target="blank"> 'What I felt through this project'</a> please visit this web page
+- If you wnat to read<a href="https://medium.com/@worldkr19/dfs-e75b7e20dd8a" target="_blank"> 'What I felt through this project'</a> please visit this web page
 
 <br>
 <br>
