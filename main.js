@@ -26,12 +26,6 @@ function onAddBtn() {
     textInput.focus();
     return;
   } else {
-    // priceArray.push(price);
-
-    // let sumTotal = priceArray.reduce((preValue, curValue) => {
-    //   return preValue + curValue;
-    // }, 0);
-
     createListItem(name, price, location);
     // total.innerHTML = `$${sumTotal}`;
     sumTotal += price;
